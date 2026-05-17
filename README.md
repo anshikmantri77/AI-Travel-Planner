@@ -59,7 +59,7 @@ cd ai-travel-planner
 
 # Copy env template and fill in your keys
 cp .env.example .env
-# Edit .env with your ANTHROPIC_API_KEY, SERPER_API_KEY, etc.
+# Edit .env with your GROQ_API_KEY, SERPER_API_KEY, etc.
 
 # Install dependencies
 make install
@@ -70,14 +70,14 @@ make install
 
 | Variable           | Required | Default                  | Description                     |
 |--------------------|----------|--------------------------|---------------------------------|
-| `ANTHROPIC_API_KEY`| Yes*     | —                        | Anthropic API key for Claude    |
+| `GROQ_API_KEY`| Yes*     | —                             | GROQ API key for GROQ  |
 | `OPENAI_API_KEY`   | No       | —                        | Alternative LLM provider        |
-| `SERPER_API_KEY`   | No       | —                        | Serper web search (mock if absent) |
-| `LLM_PROVIDER`     | No       | `anthropic`              | `anthropic` or `openai`         |
-| `LLM_MODEL`        | No       | `claude-sonnet-4-20250514`| Model name                     |
+| `SERPER_API_KEY`   | Yes       | —                        | Serper web search (mock if absent) |
+| `LLM_PROVIDER`     | No       | `groq`                   | `groq` or `openai`         |
+| `LLM_MODEL`        | No       | `llama-3.3-70b-versatile`| Model name                     |
 | `LOG_LEVEL`        | No       | `INFO`                   | Logging level                   |
 
-\* Required unless `LLM_PROVIDER=openai` and `OPENAI_API_KEY` is set.
+\* Required unless `LLM_PROVIDER=groq` and `GROQ_API_KEY` is set.
 
 ---
 
